@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  # Service 1: Our Python Backend
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app  # Syncs your code: Change a file on PC -> Updates inside Docker
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - db
+
+  # Service 2: The Database
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: buslink_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:  
