@@ -32,8 +32,17 @@
   <title>BusLink</title>
   <link rel="manifest" href="manifest.json">
   
-  <!-- Google Maps JavaScript API -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMgf25vJ2u_a3NEgOQS-OchwS5tq_QiSk&libraries=places"></script>
+  <!-- Google Maps JavaScript API - Key is loaded from env-config.js -->
+  <script src="env-config.js"></script>
+  <script>
+    // Load Google Maps with API key from env-config.js
+    // Create env-config.js with: var GOOGLE_MAPS_WEB_API_KEY = "YOUR_KEY_HERE";
+    if (typeof GOOGLE_MAPS_WEB_API_KEY !== 'undefined' && GOOGLE_MAPS_WEB_API_KEY) {
+      var script = document.createElement('script');
+      script.src = 'https://maps.googleapis.com/maps/api/js?key=' + GOOGLE_MAPS_WEB_API_KEY + '&libraries=places';
+      document.head.appendChild(script);
+    }
+  </script>
 </head>
 <body>
   <script src="flutter_bootstrap.js" async></script>

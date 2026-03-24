@@ -15,9 +15,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.buslink.app",
-      "config": {
-        "googleMapsApiKey": "AIzaSyDW1szYh1dR9k0e5hprIkQHjOYVAyhWXtA"
-      },
+
       "infoPlist": {
         "NSLocationWhenInUseUsageDescription": "BusLink needs access to your location to show nearby buses and stops.",
         "NSLocationAlwaysUsageDescription": "BusLink needs access to your location to show nearby buses and stops."
@@ -31,11 +29,7 @@
       "package": "com.buslink.app",
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "config": {
-        "googleMaps": {
-          "apiKey": "AIzaSyDW1szYh1dR9k0e5hprIkQHjOYVAyhWXtA"
-        }
-      },
+
       "permissions": [
         "ACCESS_FINE_LOCATION",
         "ACCESS_COARSE_LOCATION",
